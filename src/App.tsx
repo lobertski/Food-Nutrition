@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import RecipeResult from "./pages/RecipeSearchResult";
+import Navbar from "./components/Navbar/Navbar";
+import RecipeDisplay from "./pages/RecipeDisplay";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
-function App() {
+const App: React.FC<any> = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path="/" component={Dashboard} exact />
+          <Route path="/recipe" component={RecipeResult} exact />
+          <Route path="/recipe/display" component={RecipeDisplay} exact />
+          <Route path="/login" component={Login} exact />
+          <Route path="/register" component={Register} exact />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
