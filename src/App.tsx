@@ -1,12 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-import Background from './Pages/HomePage/Components/background';
+import "./App.css";
+import HomePage from "./Pages/HomePage";
 
 function App() {
-  return (
-    <Background />
-  )
+  return <HomePage />;
 }
 
 export default App;
