@@ -1,12 +1,14 @@
 import React from "react";
-import Background from "./Components/background";
-import Paper from "./Components/paper";
+import Background from "./Components/Background";
+import Paper from "./Components/Paper";
+import SearchBar from "./Components/SearchBar";
 
 const HomePage: React.FC<any> = () => {
   return (
     <>
       <Background />
       <Paper />
+      <SearchBar />
     </>
   );
 };
